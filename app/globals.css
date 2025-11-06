@@ -45,3 +45,49 @@ a {
     color-scheme: dark;
   }
 }
+
+/* Pepsi sections layout */
+.pepsi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.pepsi-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.pepsi-card__image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pepsi-card__image img {
+  max-width: 220px;
+  height: auto;
+}
+
+.pepsi-card__image--square img {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.pepsi-card__title {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: var(--foreground);
+  text-align: center;
+}
+
+.pepsi-card__cta {
+  margin-top: 4px;
+}
