@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import { Button } from '@dejstdm/white-label-ui';
 
 function Container({ children, className = '', padding = false }) {
   return (
@@ -26,6 +25,22 @@ function SectionHeader({ headline, subheadline, align = 'center' }) {
   );
 }
 
+function CTAButton({ variant = 'solid', href, children }) {
+  const className = `pepsi-btn pepsi-btn--${variant}`;
+  if (href) {
+    return (
+      <a className={className} href={href}>
+        {children}
+      </a>
+    );
+  }
+  return (
+    <button className={className} type="button">
+      {children}
+    </button>
+  );
+}
+
 function Hero({ backgroundImage, subheadline, headline, body, buttonLabel, buttonHref }) {
   return (
     <section className="hero">
@@ -45,7 +60,7 @@ function Hero({ backgroundImage, subheadline, headline, body, buttonLabel, butto
             {body && <div className="hero__body" dangerouslySetInnerHTML={{ __html: body }} />}
             {buttonLabel && (
               <div className="hero__button-wrapper">
-                <Button variant="solid" href={buttonHref}>{buttonLabel}</Button>
+                <CTAButton variant="solid" href={buttonHref}>{buttonLabel}</CTAButton>
               </div>
             )}
           </div>
@@ -115,7 +130,7 @@ export default function Home() {
                 </div>
                 <h3 className="pepsi-card__title">{p.title}</h3>
                 <div className="pepsi-card__cta">
-                  <Button variant="outline" href="#">Learn more</Button>
+                  <CTAButton variant="outline" href="#">Learn more</CTAButton>
                 </div>
               </div>
             ))}
@@ -161,6 +176,11 @@ export default function Home() {
         .footer__logo { font-weight:700; }
         .footer__links { display:flex; gap:12px; }
         .footer__link { color:inherit; }
+        .pepsi-btn { display:inline-flex; align-items:center; justify-content:center; padding: 12px 24px; border-radius: 999px; text-decoration:none; font-weight:600; transition:background .2s ease,color .2s ease; }
+        .pepsi-btn--solid { background:#0025ff; color:#fff; border:1px solid #0025ff; }
+        .pepsi-btn--solid:hover { background:#001ac2; border-color:#001ac2; }
+        .pepsi-btn--outline { background:transparent; color:#0025ff; border:1px solid #0025ff; }
+        .pepsi-btn--outline:hover { background:#0025ff; color:#fff; }
       `}</style>
     </div>
   );
