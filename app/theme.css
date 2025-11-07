@@ -109,3 +109,17 @@
   gap: var(--space-4, 16px) !important;
   padding: 0 !important;
 }
+
+/* Product slider button hover: ensure label is black for visibility */
+.product-slider .button:hover,
+.product-slider .button--medium:hover,
+.product-slider .button--outline:hover,
+.product-slider .button--text:hover {
+  color: var(--color-brand-on-primary, #0f0f0f);
+}
+.product-slider .button:hover .button__label,
+.product-slider .button--medium:hover .button__label,
+.product-slider .button--outline:hover .button__label,
+.product-slider .button--text:hover .button__label {
+  color: var(--color-brand-on-primary, #0f0f0f) !important;
+}
