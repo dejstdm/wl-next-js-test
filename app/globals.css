@@ -1,41 +1,54 @@
-/* Global base styles and font application */
-:root {
-  /* ensure theme font variables exist */
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-html, body {
+/* 2. Remove default margin */
+* {
   margin: 0;
-  padding: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
 }
 
 body {
-  font-family: var(--font-body, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);
-  color: var(--color-text-primary, #000);
-  background: var(--color-bg-page, #ffffff);
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
 }
 
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading, var(--font-body));
-  margin: 0;
+  text-wrap: balance;
 }
 
-/* Keep other global rules minimal to avoid overriding component styles */
-
-/* Accessibility overrides: use a darker brand color when brand is used as text on light backgrounds */
-.wysiwyg-content a,
-.product-slider__nav-button,
-.recipe-slider__nav-button,
-.image-section__nav-button,
-.image-section__link-icon,
-.faq__question,
-.faq__icon,
-.button--outline,
-.button--text {
-  color: var(--color-brand-primary-text, var(--color-brand-primary));
-}
-
-/* Ensure focus rings remain visible on bright backgrounds */
-:focus-visible {
-  outline: 2px solid var(--color-focus-ring, #000);
-  outline-offset: 2px;
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
 }
