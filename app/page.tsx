@@ -1,3 +1,4 @@
+"use client";
 import type { JSX } from 'react';
 import { NavBar, Hero, ProductSlider, TextSection, ImageSection, FAQ, Footer } from '@dejstdm/white-label-ui';
 
