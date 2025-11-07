@@ -269,3 +269,142 @@ a {
 .pepsi-btn--solid:hover { background:#001ac2; border-color:#001ac2; }
 .pepsi-btn--outline { background:transparent; color:#0025ff; border:1px solid #0025ff; }
 .pepsi-btn--outline:hover { background:#0025ff; color:#fff; }
+
+/* Lipton theme CSS variables (compiled equivalent) */
+[data-theme="lipton"] {
+  /* Palette */
+  --color-brand-primary: #F6C200;
+  --color-brand-primary-rgb: 246, 194, 0;
+  --color-brand-on-primary: #000000;
+  --color-brand-on-primary-rgb: 0, 0, 0;
+
+  --color-bg-page: #FFFFFF;
+  --color-bg-page-rgb: 255, 255, 255;
+  --color-bg-section: #FFF9E6;
+  --color-bg-section-rgb: 255, 249, 230;
+
+  --color-text-primary: #0B2A2E;
+  --color-text-primary-rgb: 11, 42, 46;
+  --color-text-muted: #6B7280;
+  --color-text-muted-rgb: 107, 114, 128;
+
+  --color-border: #E6E6E6;
+  --color-border-rgb: 230, 230, 230;
+  --color-focus-ring: #C48A00;
+  --color-focus-ring-rgb: 196, 138, 0;
+  --color-success: #16A34A;
+  --color-success-rgb: 22, 163, 74;
+  --color-warning: #F59E0B;
+  --color-warning-rgb: 245, 158, 11;
+  --color-danger: #DC2626;
+  --color-danger-rgb: 220, 38, 38;
+
+  /* Typography Families */
+  --font-heading: "Helvetica Neue", -apple-system, "Segoe UI", Roboto, Helvetica, sans-serif;
+  --font-body: Arial, -apple-system, "Segoe UI", Roboto, Helvetica, sans-serif;
+  --font-medium: var(--font-heading);
+  --font-bold: var(--font-body);
+
+  /* Typography Scales */
+  --type-display-family: var(--font-heading);
+  --type-display-weight: 600;
+  --type-display-size: 80px;
+  --type-display-line: 100%;
+  --type-display-spacing: 0;
+
+  --type-h1-family: var(--font-heading);
+  --type-h1-weight: 700;
+  --type-h1-size: 56px;
+  --type-h1-line: 110%;
+  --type-h1-spacing: 0;
+
+  --type-h2-family: var(--font-heading);
+  --type-h2-weight: 700;
+  --type-h2-size: 40px;
+  --type-h2-line: 110%;
+  --type-h2-spacing: 0;
+
+  --type-h3-family: var(--font-heading);
+  --type-h3-weight: 700;
+  --type-h3-size: 32px;
+  --type-h3-line: 110%;
+  --type-h3-spacing: 0;
+
+  --type-h4-family: var(--font-heading);
+  --type-h4-weight: 700;
+  --type-h4-size: 24px;
+  --type-h4-line: 125%;
+  --type-h4-spacing: 0;
+
+  --type-h5-family: var(--font-heading);
+  --type-h5-weight: 700;
+  --type-h5-size: 20px;
+  --type-h5-line: 125%;
+  --type-h5-spacing: 0;
+
+  --type-h6-family: var(--font-heading);
+  --type-h6-weight: 700;
+  --type-h6-size: 16px;
+  --type-h6-line: 125%;
+  --type-h6-spacing: 0;
+
+  --type-body-large-family: var(--font-body);
+  --type-body-large-weight: 400;
+  --type-body-large-size: 18px;
+  --type-body-large-line: 150%;
+  --type-body-large-spacing: 0;
+
+  --type-body-small-family: var(--font-body);
+  --type-body-small-weight: 400;
+  --type-body-small-size: 16px;
+  --type-body-small-line: 150%;
+  --type-body-small-spacing: 0;
+
+  --type-label-family: var(--font-body);
+  --type-label-weight: 600;
+  --type-label-size: 14px;
+  --type-label-line: 120%;
+  --type-label-spacing: 1%;
+
+  --type-small-family: var(--font-body);
+  --type-small-weight: 400;
+  --type-small-size: 12px;
+  --type-small-line: 140%;
+  --type-small-spacing: 1%;
+
+  /* Spacing */
+  --space-0: 2px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Radii */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,0.12);
+
+  /* Grid */
+  --grid-columns: 12;
+  --grid-gutter: 24px;
+  --grid-container-sm: 640px;
+  --container-sm: 640px;
+  --grid-container-md: 768px;
+  --container-md: 768px;
+  --grid-container-lg: 1024px;
+  --container-lg: 1024px;
+  --grid-container-xl: 1280px;
+  --container-xl: 1280px;
+  --grid-container-2xl: 1440px;
+  --container-2xl: 1440px;
+}
