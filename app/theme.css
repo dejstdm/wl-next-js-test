@@ -46,6 +46,37 @@
   /* Shadows */
   --shadow-md: 0 10px 30px rgba(22, 16, 4, 0.15);
   --shadow-lg: 0 18px 40px rgba(22, 16, 4, 0.18);
+  /* Brand hover/active shades for buttons */
+  --color-brand-primary-hover: #e0ba12;
+  --color-brand-primary-active: #b8960e;
+}
+
+/* Force product slider buttons to use solid variant for better visibility */
+.product-slider .button,
+.product-slider .button--medium {
+  background: var(--color-brand-primary);
+  color: var(--color-brand-on-primary);
+  border: 2px solid var(--color-brand-primary);
+}
+
+.product-slider .button:hover:not(.button--disabled),
+.product-slider .button--medium:hover:not(.button--disabled) {
+  background: var(--color-brand-primary-hover);
+  border-color: var(--color-brand-primary-hover);
+}
+
+.product-slider .button:active:not(.button--disabled),
+.product-slider .button--medium:active:not(.button--disabled) {
+  background: var(--color-brand-primary-active);
+  border-color: var(--color-brand-primary-active);
+}
+
+/* If buttons were rendered as outline/text, ensure they inherit solid styles */
+.product-slider .button--outline,
+.product-slider .button--text {
+  background: var(--color-brand-primary);
+  color: var(--color-brand-on-primary);
+  border: 2px solid var(--color-brand-primary);
 }
 
 /* Accessibility overrides applied after component styles */
