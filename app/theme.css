@@ -47,7 +47,7 @@
   --shadow-md: 0 10px 30px rgba(22, 16, 4, 0.15);
   --shadow-lg: 0 18px 40px rgba(22, 16, 4, 0.18);
   /* Brand hover/active shades for buttons */
-  --color-brand-primary-hover: #000;
+  --color-brand-primary-hover: #e0ba12;
   --color-brand-primary-active: #b8960e;
 }
 
