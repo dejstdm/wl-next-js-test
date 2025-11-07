@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import { Button } from '@dejstdm/white-label-ui';
 
 function Container({ children, className = '', padding = false }) {
   return (
@@ -10,21 +11,6 @@ function Container({ children, className = '', padding = false }) {
   );
 }
 
-function Button({ children, href, variant = 'solid' }) {
-  const className = `pepsi-button pepsi-button--${variant}`;
-  if (href) {
-    return (
-      <a className={className} href={href}>
-        {children}
-      </a>
-    );
-  }
-  return (
-    <button className={className} type="button">
-      {children}
-    </button>
-  );
-}
 
 function SectionHeader({ headline, subheadline, align = 'center' }) {
   return (
@@ -59,7 +45,7 @@ function Hero({ backgroundImage, subheadline, headline, body, buttonLabel, butto
             {body && <div className="hero__body" dangerouslySetInnerHTML={{ __html: body }} />}
             {buttonLabel && (
               <div className="hero__button-wrapper">
-                <Button variant="inverted" href={buttonHref}>{buttonLabel}</Button>
+                <Button variant="solid" href={buttonHref}>{buttonLabel}</Button>
               </div>
             )}
           </div>
@@ -169,10 +155,6 @@ export default function Home() {
 
       <style jsx>{`
         .container-wrapper { max-width: 1140px; margin: 0 auto; }
-        .pepsi-button { display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:8px; text-decoration:none; }
-        .pepsi-button--solid { background: var(--color-brand-primary); color: var(--color-brand-on-primary); border: 2px solid var(--color-brand-primary); }
-        .pepsi-button--outline { background: transparent; color: var(--color-brand-primary); border: 2px solid var(--color-brand-primary); }
-        .pepsi-button--inverted { background: var(--color-brand-on-primary); color: var(--color-brand-primary); border: 2px solid transparent; }
         .section-header { text-align: center; margin-bottom: 24px; }
         .section-header__title { font-size: 28px; margin-bottom:8px; }
         .site-footer { background: #f7f7f7; padding: 24px 0; margin-top: 40px; }
