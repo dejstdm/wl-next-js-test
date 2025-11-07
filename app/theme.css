@@ -60,3 +60,21 @@
 .button--text {
   color: var(--color-brand-primary-text, #8c5a00);
 }
+
+/* Hero overrides: remove dark overlay and hide headline and CTA button */
+.hero__overlay {
+  display: none !important;
+  background: transparent !important;
+}
+
+/* Hide the main headline and button wrapper inside hero */
+.hero__headline,
+.hero__button-wrapper {
+  display: none !important;
+}
+
+/* Ensure hero content spacing adapts when headline/button removed */
+.hero__text {
+  gap: var(--space-4, 16px) !important;
+  padding: 0 !important;
+}
