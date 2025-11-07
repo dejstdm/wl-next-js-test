@@ -1,5 +1,8 @@
 ## Builder Agent Guidelines
 
+## Purpose
+Builder.io should strictly use components and theming defined in the `white-label-ui-lib` Storybook repository.
+
 1. **Always use White Label UI sections first.** When generating pages, prefer components from `@dejstdm/white-label-ui` (NavBar, Hero, ProductSlider, FAQ, Footer, etc.). These are pre-approved building blocks for layout, calls to action, and content sections.
 
 2. **Apply the custom brand theme.** Import `@dejstdm/white-label-ui/dist/style.css` followed by `themes/custom/theme.css`, then set `data-theme="custom"` on the `<html>` element (or a wrapping container) so the cola brand palette overrides the defaults.
