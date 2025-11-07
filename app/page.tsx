@@ -85,7 +85,7 @@ export default function Home(): JSX.Element {
       <NavBar logo={<BrandMark />} items={navItems} sticky />
 
       <Hero
-        backgroundImage="/pepsi/images/hero.jpg"
+        backgroundImage="https://www.lays.fr/prod/s3fs-public/2025-06/banner2%20horrizontal%20copy2.png"
         subheadline="<p>Bold taste, zero sugar</p>"
         headline="PEPSI MAX"
         body="<p>Maximum taste with no sugar.</p>"

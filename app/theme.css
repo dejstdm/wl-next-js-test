@@ -1,10 +1,12 @@
 :root {
   /* Brand palette */
-  --color-brand-primary: #c09b2e;
-  --color-brand-primary-dark:#c09b2e;
-  --color-brand-primary-rgb: 192, 155, 46;
+  --color-brand-primary: #ffd218;
+  --color-brand-primary-dark: #ffd218;
+  --color-brand-primary-rgb: 255, 210, 24;
   --color-brand-on-primary: #0f0f0f;
   --color-brand-on-primary-rgb: 15, 15, 15;
+  --color-brand-primary-text: #8c5a00;
+  --color-brand-primary-text-rgb: 140, 90, 0;
   --color-bg-page: #fff9f0;
   --color-bg-page-rgb: 255, 249, 240;
   --color-bg-section: #fff4de;
@@ -15,8 +17,8 @@
   --color-text-muted-rgb: 107, 90, 64;
   --color-border: #e7d2a3;
   --color-border-rgb: 231, 210, 163;
-  --color-focus-ring: #c09b2e;
-  --color-focus-ring-rgb: 192, 155, 46;
+  --color-focus-ring: #ffd218;
+  --color-focus-ring-rgb: 255, 210, 24;
   --color-success: #3a8c2a;
   --color-success-rgb: 58, 140, 42;
   --color-warning: #d88c21;
@@ -25,8 +27,8 @@
   --color-danger-rgb: 195, 71, 47;
 
   /* Typography overrides */
-  --font-heading: "GT America Trial Bd", "Inter", system-ui, -apple-system, sans-serif;
-  --font-body: "GT America Rg", "Inter", system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-raleway, 'Raleway', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);
+  --font-body: var(--font-raleway, 'Raleway', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);
   --type-h1-size: 68px;
   --type-h2-size: 54px;
   --type-h3-size: 42px;
@@ -44,4 +46,35 @@
   /* Shadows */
   --shadow-md: 0 10px 30px rgba(22, 16, 4, 0.15);
   --shadow-lg: 0 18px 40px rgba(22, 16, 4, 0.18);
+}
+
+/* Accessibility overrides applied after component styles */
+.faq__question,
+.faq__icon {
+  color: var(--color-brand-primary-text, #8c5a00);
+}
+
+/* Also ensure wysiwyg links and buttons use accessible text color on light backgrounds */
+.wysiwyg-content a,
+.button--outline,
+.button--text {
+  color: var(--color-brand-primary-text, #8c5a00);
+}
+
+/* Hero overrides: remove dark overlay and hide headline and CTA button */
+.hero__overlay {
+  display: none !important;
+  background: transparent !important;
+}
+
+/* Hide the main headline and button wrapper inside hero */
+.hero__headline,
+.hero__button-wrapper {
+  display: none !important;
+}
+
+/* Ensure hero content spacing adapts when headline/button removed */
+.hero__text {
+  gap: var(--space-4, 16px) !important;
+  padding: 0 !important;
 }
