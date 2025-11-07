@@ -47,3 +47,16 @@
   --shadow-md: 0 10px 30px rgba(22, 16, 4, 0.15);
   --shadow-lg: 0 18px 40px rgba(22, 16, 4, 0.18);
 }
+
+/* Accessibility overrides applied after component styles */
+.faq__question,
+.faq__icon {
+  color: var(--color-brand-primary-text, #8c5a00);
+}
+
+/* Also ensure wysiwyg links and buttons use accessible text color on light backgrounds */
+.wysiwyg-content a,
+.button--outline,
+.button--text {
+  color: var(--color-brand-primary-text, #8c5a00);
+}
