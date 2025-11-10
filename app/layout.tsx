@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Raleway } from "next/font/google";
 import "./globals.css";
 import "@dejstdm/white-label-ui/dist/style.css";
-import "@dejstdm/white-label-ui/themes/7up/dist/theme.css";
+import "@dejstdm/white-label-ui/themes/lays/dist/theme.css";
 import "swiper/css";
 import "swiper/css/navigation";
-import "./theme.css"
+import "./theme.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="lipton">
+    <html lang="en" data-theme="lays">
       <body className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable}`}>
         {children}
       </body>
