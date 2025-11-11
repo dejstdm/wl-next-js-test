@@ -2,7 +2,7 @@
 
 ## 📁 Repositories
 
-- **Design System:** `white-label-ui-lib`
+- **Design System:** `white-label-ui-lib` (published as `@dejstdm/white-label-ui`)
 - **Next.js App (target site):** `wl-next-js-test`
 
 ---
@@ -21,10 +21,10 @@
 - Shared sections → `src/sections/**`
 - Imports from design system via:
   ```ts
-  import { NavBar, Hero, Button, Container, Heading, Text, FAQ, Footer } from 'white-label-ui-lib';
+  import { NavBar, Hero, Button, Container, Heading, Text, FAQ, Footer } from '@dejstdm/white-label-ui';
 
 ### ⚙️ Component Usage Rules
-- Import only from the library’s public API (white-label-ui-lib).
+- Import only from the library’s public API (`@dejstdm/white-label-ui`).
 - Do not deep import (/components/...).
 - Use documented props and variants; no custom props.
 - No inline styles or arbitrary Tailwind classes.
@@ -99,19 +99,10 @@
 Use stories in src/stories/ for prop examples.
 If code and stories differ, prefer the code.
 
-## 🎨 Theming & Tokens
-- Themes use [data-theme="<brand>"] at the <html> or top layout level.
-- All color/typography/spacing values come from CSS variables.
-- Do not override tokens per page; rely on active theme.
-
-### Color Roles
-- `--color-brand-primary`
-- `--color-text-primary`
-- `--color-surface-background`
-- etc.
-
-### Spacing Tokens
-- `--space-xs`, `--space-sm`, `--space-md`, `--space-lg`, `--space-xl`
+## 🎨 Styling Guidelines
+- Load the package CSS from `@dejstdm/white-label-ui/dist/style.css` once (plus any provided theme CSS files bundled with the package). Do not edit or extend these files.
+- All visual tweaks must use documented component props/variants (e.g., `Hero.mode`, `Button.variant`, NavBar data). No additional CSS, tokens, or overrides are allowed.
+- Setting `data-theme` is restricted to the themes exported by the package; do not introduce custom theme names or touch `/themes`.
 
 ## Media Guidelines
 - Respect aspect ratios:
@@ -136,16 +127,16 @@ If code and stories differ, prefer the code.
 
 ## ✅ Do / ❌ Don’t
 - ✅ Use existing components and their documented variants/props.
-- ✅ Use Container for page width and vertical rhythm (spacing tokens).
+- ✅ Use Container for page width and vertical rhythm defined by the library.
 - ✅ Keep content (copy/images/links) in the Next.js app; presentation comes from the library.
 - ❌ No inline CSS or ad-hoc Tailwind classes; no deep imports from component internals.
 - ❌ Don’t invent new props or variants.
-- ❌ Don’t hardcode colors/typography; always rely on tokens.
+- ❌ Don’t hardcode colors/typography; rely on the component variants that ship with the package.
 
 ## 🧠 Example Page Structure
 ``` tsx
 // wl-next-js-test/app/(site)/page.tsx
-import { NavBar, Hero, Container, FAQ, Footer } from 'white-label-ui-lib';
+import { NavBar, Hero, Container, FAQ, Footer } from '@dejstdm/white-label-ui';
 
 export default function HomePage() {
   return (
@@ -170,10 +161,12 @@ export default function HomePage() {
       />
 
       <Container as="section">
-        <FAQ items={[
-          { question: 'How does theming work?', answer: 'Via CSS variables on [data-theme].' },
-          { question: 'Is AA enforced?', answer: 'Yes, in the design system.' },
-        ]} />
+      <FAQ
+        items={[
+          { question: 'How does styling work?', answer: 'All components ship with built-in variants and sizes—no custom CSS needed.' },
+          { question: 'Is AA enforced?', answer: 'Yes, the design system handles it for you.' },
+        ]}
+      />
       </Container>
 
       <Footer links={[
@@ -187,5 +180,5 @@ export default function HomePage() {
 
 ## 🧩 Build & Runtime Assumptions
 - `white-label-ui-lib` is installed (local workspace or GitHub -dependency).
-- Global CSS from tokens/theme is imported once (e.g., `app/globals.-css`).
+- Global CSS from the package is imported once (e.g., `app/globals.-css`).
 - Component server/client boundaries follow library definitions.

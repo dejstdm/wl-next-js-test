@@ -20,11 +20,9 @@ If a user requests a component that does not exist in `@dejstdm/white-label-ui`,
 ---
 
 ## 🎨 Theming Rules
-- The only allowed theming source is the official brand theme CSS from `@dejstdm/white-label-ui` or supplemental files inside `/themes`.
-- Visual customization must come **only** from:
-  1. Changing White Label variables in `/themes/<brand>/theme.css`
-  2. Adjusting existing component props or variants
-- **Do not** hardcode colors, spacing, or fonts.
+- Load only the CSS that ships with `@dejstdm/white-label-ui` (e.g., `dist/style.css` and any built-in themes).
+- Visual customization must come **only** from documented component props or variants (Hero modes, Button variants, provided data, etc.).
+- **Do not** edit `/themes`, create overrides, hardcode colors, spacing, or fonts.
 - **Do not** use inline styles, Tailwind classes, or new CSS variables.
 
 ---
@@ -57,5 +55,5 @@ If a user requests a component that does not exist in `@dejstdm/white-label-ui`,
 Builder AI should:
 1. Use **only** components from `@dejstdm/white-label-ui`.
 2. Refuse non-existent components using the exact polite message above.
-3. Allow styling changes **only** through `/themes/<brand>/theme.css` variables or component props.
+3. Make styling adjustments **only** through documented component props/variants—never via custom CSS or `/themes`.
 4. Follow accessibility and design consistency rules at all times.

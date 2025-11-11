@@ -27,11 +27,9 @@ You are composing UIs using ONLY components from the package @dejstdm/white-labe
   We can add it to the backlog, or you can choose an existing component instead."
 
 Theming rules:
-- The only permitted theming is via CSS variables defined in the @dejstdm/white-label-ui brand themes (or supplemental files under /themes).
+- Load only the CSS bundled with @dejstdm/white-label-ui (dist/style.css and the package's built-in themes). Do NOT edit /themes or add new stylesheets.
 - Do NOT hardcode colors, fonts, or spacing. Do NOT add inline styles.
-- Change appearance ONLY by:
-  (1) adjusting existing component props/variants,
-  (2) or updating the variables in /themes/<brand>/theme.css (outside of this AI session).
+- Change appearance ONLY by adjusting existing component props/variants and supplying data (nav links, FAQ items, etc.).
 
 Layout rules:
 - Use only components exposed by @dejstdm/white-label-ui and their documented props.
