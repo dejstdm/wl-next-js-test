@@ -5,13 +5,13 @@ Builder.io should strictly use components and theming defined in the `white-labe
 
 1. **Always use White Label UI sections first.** When generating pages, prefer components from `@dejstdm/white-label-ui` (NavBar, Hero, ProductSlider, FAQ, Footer, etc.). These are pre-approved building blocks for layout, calls to action, and content sections.
 
-2. **Apply the custom brand theme.** Import `@dejstdm/white-label-ui/dist/style.css` followed by `themes/custom/theme.css`, then set `data-theme="custom"` on the `<html>` element (or a wrapping container) so the cola brand palette overrides the defaults.
+2. **Apply the custom brand theme.** Import `@dejstdm/white-label-ui/dist/style.css` followed by the matching package theme (for example `@dejstdm/white-label-ui/themes/lays/dist/theme.css`), then set `data-theme` on `<html>` (or a wrapping container) to the same brand key so the palette overrides the defaults.
 
 3. **Avoid primitive reimplementation.** Do not recreate buttons, containers, typography, or sliders manually. Instead, configure the props on the existing library components (e.g., supply `products`, `items`, `navItems`, FAQ data, etc.).
 
 4. **Respect content structure.** Each White Label component manages its own spacing and `Container` usage. Do not nest them inside extra layout wrappers unless absolutely necessary for page-level grid requirements.
 
-5. **Theme tokens are the foundation.** Prefer changing colors/typography via CSS variables in `themes/custom/theme.css` (or another brand file). When a brand needs stylistic flourishes beyond tokens—gradients, textured backgrounds, bespoke borders—add a dedicated override stylesheet (for example `app/theme.css` or `themes/<brand>/overrides.css`) and import it after the base theme so those selectors win. Do not scatter inline styles or hard-coded hex values throughout components.
+5. **Theme tokens are the foundation.** Prefer changing colors/typography via CSS variables in `/themes/<brand>/theme.css` (or another brand file inside `/themes`). When a brand needs stylistic flourishes beyond tokens—gradients, textured backgrounds, bespoke borders—add a dedicated override stylesheet such as `/themes/<brand>/overrides.css` and import it after the base theme so those selectors win. Do not scatter inline styles or hard-coded hex values throughout components.
 
 6. **Keep pages client-ready.** If a component requires client-side behavior (e.g., sliders), ensure the page adds `'use client'` and imports the required Swiper CSS (`swiper/css`, `swiper/css/navigation`) when those components are used.
 
